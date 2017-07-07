@@ -25,8 +25,6 @@ var stylesSrc = [
     './styles/**/*.scss'
 ];
 
-console.log('aaa', argv)
-
 function buildScript (file) {
     var props = {
         entries: ['./components/' + file],

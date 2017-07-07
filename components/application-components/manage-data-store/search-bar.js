@@ -1,14 +1,14 @@
 var React = require('react');
 
-var StorePage = React.createClass({
+var SearchBar = React.createClass({
 
     render: function () {
         return (
             <div>
-                Welcome to the Store DB Page!!
+                {this.props.children}
             </div>
         );
     }
 });
 
-module.exports = StorePage;
+module.exports = SearchBar;
