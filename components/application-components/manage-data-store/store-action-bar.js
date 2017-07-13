@@ -7,7 +7,7 @@ var StoreActionBar = React.createClass({
         return (
             <div className="store-action-bar">
                 <div>
-                    {this.props.children}
+                    Title
                 </div>
                 <Button buttonType="add" />
                 <Button buttonType="view" />

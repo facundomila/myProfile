@@ -22,13 +22,13 @@ var ManageStoreIndexPage = React.createClass({
     },
 
     render: function () {
-        var products = this.state.products.records;
+        var ProductStore = this.state.products.records;
         return (
             <div className="manage-store">
                 <Header className="header">LOGO
                     <NavigationBar>sdf</NavigationBar>
                 </Header>
-                <ManageStoreProduct>Manage store product</ManageStoreProduct>
+                <ManageStoreProduct>{ProductStore}</ManageStoreProduct>
             </div>
         );
     }

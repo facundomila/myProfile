@@ -5,18 +5,18 @@ var React = require('react');
 var ProductList = React.createClass({
 
     render: function () {
-        return (
-            <div className="product-list">
-                {this.props.children}
-            </div>
-        );
-    }
-
-    /*renderItems: function () {
         var products = this.props.children;
 
-        return _.map(products, <ProductItem>{products}</ProductItem>);
-    }*/
+        return (
+            <div className="product-list">
+                {_.map(products, this.renderItems)}
+            </div>
+        );
+    },
+
+    renderItems: function (product, key) {
+        return <ProductItem key={key}>{product}</ProductItem>;
+    }
 });
 
 module.exports = ProductList;
