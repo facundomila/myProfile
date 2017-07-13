@@ -19,10 +19,10 @@ var IndexPage = React.createClass({
     },
 
     render: function () {
-        console.log(this.state.products.records)
+        var products = this.state.products.records;
         return (
             <div className="index-page">
-                Hello World!
+                {products[1].name}
             </div>
         );
     }
