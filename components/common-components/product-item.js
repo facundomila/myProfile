@@ -4,7 +4,6 @@ var ProductItem = React.createClass({
 
     render: function () {
         var products = this.props.children;
-        console.log('aaaa', products);
 
         return (
             <div className="product-item">
