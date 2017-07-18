@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var classNames = require('classnames');
 var React = require('react');
 var Icon = require('components/core-components/icon');
@@ -19,7 +20,7 @@ var Button = React.createClass({
     getProps: function () {
         return {
             className: this.getClass()
-        }
+        };
     },
 
     getClass: function () {

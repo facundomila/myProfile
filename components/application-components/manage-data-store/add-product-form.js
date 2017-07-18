@@ -3,27 +3,47 @@ var storeProductApi = require('services/store-product/store-product-api');
 
 var AddProductForm = React.createClass ({
 
+    getInitialState: function () {
+        return {
+            name: '',
+            description: '',
+            price: '',
+            category_id: 0
+        };
+    },
+
     render: function () {
         return (
             <div className="add-product-form">
-                {this.props.children}
-                <button onClick={this.pushData}>submit</button>
+                <form onSubmit={this.pushData}>
+                    <input type='text' required onChange={this.onNameChange} />
+                    <input type='text' required onChange={this.onDescriptionChange} />
+                    <input type='text' placeholder="pone el precio" required onChange={this.onPriceChange} />
+                    <button type="submit">Crear</button>
+                </form>
             </div>
         );
     },
 
+    onNameChange: function(e) {
+        this.setState({name: e.target.value});
+    },
+
+    onDescriptionChange: function(e) {
+        this.setState({description: e.target.value});
+    },
+
+    onPriceChange: function(e) {
+        this.setState({price: e.target.value});
+    },
+
     pushData: function () {
-        var form_data = {
-            name: 'facundo',
-            description: 'mila',
-            price: '50',
-            category_id: 0
-        };
+        var fer = this.state;
 
         storeProductApi({
             method: "POST",
             url: "http://localhost/my-profile/api/product/create.php"
-        }, JSON.stringify(form_data))
+        }, JSON.stringify(fer))
     }
 
 });
