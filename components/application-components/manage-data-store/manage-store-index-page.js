@@ -4,12 +4,14 @@ var NavigationBar = require('components/core-components/navigation-bar');
 var AddProductForm = require('components/application-components/manage-data-store/add-product-form');
 var ManageStoreProduct = require('components/application-components/manage-data-store/manage-store-product');
 var storeProductApi = require('services/store-product/store-product-api');
+var ModalContainer = require('components/core-components/modal-container');
 
 var ManageStoreIndexPage = React.createClass({
 
     getInitialState: function() {
         return {
-            products: ''
+            products: '',
+            showModal: false
         };
     },
 
@@ -24,16 +26,21 @@ var ManageStoreIndexPage = React.createClass({
 
     render: function () {
         var ProductStore = this.state.products.records;
-        var test = 'hola form';
+
         return (
             <div className="manage-store">
                 <Header className="header">LOGO
                     <NavigationBar>sdf</NavigationBar>
                 </Header>
-                <AddProductForm>{test}</AddProductForm>
-                <ManageStoreProduct>{ProductStore}</ManageStoreProduct>
+                <AddProductForm>form</AddProductForm>
+                <ManageStoreProduct handleDeleteButton={this.handleDeleteButton.bind(this)}>{ProductStore}</ManageStoreProduct>
+                <ModalContainer showModal={this.state.showModal}/>
             </div>
         );
+    },
+
+    handleDeleteButton: function () {
+        console.log('holis')
     }
 });
 

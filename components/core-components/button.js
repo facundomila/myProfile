@@ -19,7 +19,8 @@ var Button = React.createClass({
 
     getProps: function () {
         return {
-            className: this.getClass()
+            className: this.getClass(),
+            onClick: this.props.onClick
         };
     },
 

@@ -1,4 +1,5 @@
 var React = require('react');
+var StoreActionBar = require('components/application-components/manage-data-store/store-action-bar');
 
 var ProductItem = React.createClass({
 
@@ -10,6 +11,7 @@ var ProductItem = React.createClass({
                 {this.renderName(products)}
                 {this.renderDescription(products)}
                 {this.renderPrice(products)}
+                {this.renderActionBar(products)}
             </div>
         );
     },
@@ -24,6 +26,12 @@ var ProductItem = React.createClass({
 
     renderPrice: function (products) {
         return <div>{products.price}</div>;
+    },
+
+    renderActionBar: function (products) {
+        var productId = products.id;
+
+        return <StoreActionBar />
     }
 });
 

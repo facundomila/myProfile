@@ -9,7 +9,7 @@ var ManageStoreProduct = React.createClass({
 
         return (
             <div className="manage-store-product">
-                <StoreActionBar>
+                <StoreActionBar handleDeleteButton={this.props.handleDeleteButton}>
                     {ProductStore}
                 </StoreActionBar>
                 <ProductList key="index">
