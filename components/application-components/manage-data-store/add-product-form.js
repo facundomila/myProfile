@@ -37,13 +37,15 @@ var AddProductForm = React.createClass ({
         this.setState({price: e.target.value});
     },
 
-    pushData: function () {
-        var fer = this.state;
+    pushData: function (event) {
+        var newProduct = this.state;
+
+        event.preventDefault();
 
         storeProductApi({
-            method: "POST",
-            url: "http://localhost/my-profile/api/product/create.php"
-        }, JSON.stringify(fer))
+            url: "http://localhost/my-profile/api/product/create.php",
+            method: "POST"
+        }, JSON.stringify(newProduct))
     }
 
 });

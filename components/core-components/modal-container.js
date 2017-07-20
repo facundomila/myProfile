@@ -13,13 +13,17 @@ var ModalContainer = React.createClass({
 
     renderModal: function () {
         var modal = null;
-        if (this.props.showModal) {
+
+        if (this.props.disable) {
             modal = (
                 <div>
                     <div className="modal-container-overlay">
                     </div>
-                    <Modal>
-                        hola modal
+                    <Modal closeMe={this.props.closeMe}>
+                        <h2>Seguro que quieres eliminar {this.props.name}?</h2>
+                        <button onClick={this.props.closeMe}>Close</button>
+                        <button onClick={this.props.closeMe}>No</button>
+                        <button onClick={this.props.confirm}>Confirmar</button>
                     </Modal>
                 </div>
             );

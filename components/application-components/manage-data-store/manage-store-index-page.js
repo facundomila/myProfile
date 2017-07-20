@@ -4,7 +4,6 @@ var NavigationBar = require('components/core-components/navigation-bar');
 var AddProductForm = require('components/application-components/manage-data-store/add-product-form');
 var ManageStoreProduct = require('components/application-components/manage-data-store/manage-store-product');
 var storeProductApi = require('services/store-product/store-product-api');
-var ModalContainer = require('components/core-components/modal-container');
 
 var ManageStoreIndexPage = React.createClass({
 
@@ -33,14 +32,9 @@ var ManageStoreIndexPage = React.createClass({
                     <NavigationBar>sdf</NavigationBar>
                 </Header>
                 <AddProductForm>form</AddProductForm>
-                <ManageStoreProduct handleDeleteButton={this.handleDeleteButton.bind(this)}>{ProductStore}</ManageStoreProduct>
-                <ModalContainer showModal={this.state.showModal}/>
+                <ManageStoreProduct>{ProductStore}</ManageStoreProduct>
             </div>
         );
-    },
-
-    handleDeleteButton: function () {
-        console.log('holis')
     }
 });
 

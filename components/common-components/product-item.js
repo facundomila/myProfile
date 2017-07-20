@@ -30,8 +30,9 @@ var ProductItem = React.createClass({
 
     renderActionBar: function (products) {
         var productId = products.id;
+        var productName = products.name;
 
-        return <StoreActionBar />
+        return <StoreActionBar id={productId} name={productName}/>
     }
 });
 

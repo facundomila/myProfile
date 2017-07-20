@@ -1,6 +1,5 @@
 var ProductList = require('components/common-components/product-list');
 var React = require('react');
-var StoreActionBar = require('components/application-components/manage-data-store/store-action-bar');
 
 var ManageStoreProduct = React.createClass({
 
@@ -9,9 +8,6 @@ var ManageStoreProduct = React.createClass({
 
         return (
             <div className="manage-store-product">
-                <StoreActionBar handleDeleteButton={this.props.handleDeleteButton}>
-                    {ProductStore}
-                </StoreActionBar>
                 <ProductList key="index">
                     {ProductStore}
                 </ProductList>
